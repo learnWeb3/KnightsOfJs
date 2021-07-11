@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnightsOfJS: Welcome to THE GAME :</title>
+    <!-- BOOTSTRAP CSS LIBRARY -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- OWN STYLES -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- BOOTSTRAP JS LIBRARY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-classic">
+
+
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="#"><img src="img/knightsOfJs_logo.png" alt="Knights Of Js logo"></a>
+        </nav>
+
+    </header>
+
+    <main class="container-fluid">
+
+        <h2 class="my-4 px-4">Etape 1/3: Choisissez votre équipe !</h2>
+
+        <div class="row col-12">
+
+            <div class="col-md-4 col-12 p-4">
+                <form action="" method="post" id="form-character-gen-teamMates">
+
+                    <h3>Créer un personnage:</h3>
+
+                    <div class="form-group">
+
+                        <label for="select-characters-teamMates">Choisir une classe de personnage</label>
+
+                        <select name="select-characters" id="select-characters-teamMates" class="form-control" required>
+
+                            <option value="assassin">Assassin</option>
+                            <option value="berzerker">Berzerker</option>
+                            <option value="fighter">Fighter</option>
+                            <option value="monk">Monk</option>
+                            <option value="paladin">Paladin</option>
+                            <option value="wizard">Wizard</option>
+
+
+                        </select>
+
+                        <div class="form-group" id="character-name-group-teamMates">
+                            <label for="character-name-teamMates" id="character-name-label-teamMates">Nom de votre
+                                personnage</label>
+                            <input type="text" class="form-control" id="character-name-teamMates" name="character-name">
+                        </div>
+
+
+                    </div>
+
+
+                </form>
+
+                <button type="submit" form="form-character-gen-teamMates"
+                    class="btn-lg btn-success col-12 my-4">valider</button>
+
+                <h4>Caractéristiques</h4>
+
+                <ul id="class-skills-teamMates" class="list-group text-center">
+
+                    <li class="list-group-item bg-danger text-white">VIE: 6</li>
+                    <li class="list-group-item bg-info text-white">MANA: 20</li>
+                    <li class="list-group-item bg-warning text-dark">DOMMAGE: 6</li>
+
+                </ul>
+
+
+            </div>
+
+
+            <div class="col-md-8 col-12 p-4" id="fighters-container-teamMates">
+
+                <h3>Votre équipe: <strong class="player-count"></strong></h3>
+
+                <div id="fighters-teamMates" data='teamMates'>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+        <h2 class="my-4 px-4">Etape 2/3: Choisissez vos adversaires !</h2>
+
+
+        <div class="row col-12">
+
+            <div class="col-md-4 col-12 p-4">
+                <form action="" method="post" id="form-character-gen-ennemies">
+
+                    <h3>Créer un personnage:</h3>
+
+                    <div class="form-group">
+
+                        <label for="select-characters-ennemies">Choisir une classe de personnage</label>
+
+                        <select name="select-characters" id="select-characters-ennemies" class="form-control" required>
+
+                            <option value="assassin">Assassin</option>
+                            <option value="berzerker">Berzerker</option>
+                            <option value="fighter">Fighter</option>
+                            <option value="monk">Monk</option>
+                            <option value="paladin">Paladin</option>
+                            <option value="wizard">Wizard</option>
+
+
+                        </select>
+
+                        <div class="form-group" id="character-name-group-ennemies">
+                            <label for="character-name-ennemies" id="character-name-label-ennemies">Nom de votre
+                                personnage</label>
+                            <input type="text" class="form-control" id="character-name-ennemies" name="character-name">
+                        </div>
+
+
+                    </div>
+
+
+                </form>
+
+                <button type="submit" form="form-character-gen-ennemies"
+                    class="btn-lg btn-success col-12 my-4">valider</button>
+
+                <h4>Caractéristiques</h4>
+
+                <ul id="class-skills-ennemies" class="list-group text-center">
+
+                    <li class="list-group-item bg-danger text-white">VIE: 6</li>
+                    <li class="list-group-item bg-info text-white">MANA: 20</li>
+                    <li class="list-group-item bg-warning text-dark">DOMMAGE: 6</li>
+
+                </ul>
+
+
+            </div>
+
+
+            <div class="col-md-8 col-12 p-4" id="fighters-container-ennemies">
+
+                <h3>Vos Adversaires: <strong class="player-count"></strong></h3>
+
+                <div id="fighters-ennemies" data='ennemies'>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+        <h2 class="my-4 px-4">Etape 3/3: Lancer la partie </h2>
+
+        <div class="row col-12">
+
+            <div class="col-12 p-4">
+
+                <button type="submit" id="lauch-game" class="btn-lg btn-success col-12 my-4">COMMENCER</button>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </main>
+
+    <script src="helpers/array_functions.js"></script>
+    <script src="helpers/Alert.js"></script>
+    <script src="classes/characters/Characters.js"></script>
+    <script src="classes/characters/Wizard.js"></script>
+    <script src="classes/characters/Fighter.js"></script>
+    <script src="classes/characters/Monk.js"></script>
+    <script src="classes/characters/Paladin.js"></script>
+    <script src="classes/characters/Berzerker.js"></script>
+    <script src="classes/characters/Assassin.js"></script>
+    <script src="classes/game/Game.js"></script>
+
+    <script src="classes/characters/CharacterCharacteristics.js"></script>
+    <script src="classes/characters/CharacterFactory.js"></script>
+    <script src="helpers/init.js"></script>
+
+</body>
+
+</html>

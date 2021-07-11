@@ -1,0 +1,213 @@
+
+/* GENERAL MARKUP  */
+
+main{
+    min-height: 100vh;
+}
+
+/* BACKGROUNDS */
+
+.bg-classic{
+    background-color:#282828;
+    color:#FFF
+}
+
+.bg-arena{
+    background-image: url(../img/arena_texture.jpg);
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    padding: 0.5rem 2rem;
+}
+
+.navbar-brand img{
+    height: 10rem;
+    width: 10rem;
+    background-color: #FFF;
+}
+
+
+/* GENERAL CARD STYLES */
+
+
+.card{
+    color:#000;
+    margin:.5rem;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+/* CONTAINER CHARACTER SELECTION */
+
+#fighters-container-teamMates, #fighters-container-ennemies{
+    background-color:#585858;
+}
+
+#fighters-teamMates,#fighters-ennemies
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* CARDS CHARACTER SELECTION */
+
+#fighters-container-teamMates .card:hover, #fighters-container-ennemies .card:hover{
+    -webkit-box-shadow: 0px 8px 76px -18px rgba(255,255,255,0.8);
+    -moz-box-shadow: 0px 8px 76px -18px rgba(255,255,255,0.8);
+    box-shadow: 0px 8px 76px -18px rgba(255,255,255,0.8);
+}
+
+#fighters-container-teamMates .card, #fighters-container-ennemies .card{
+    max-height: 25rem;
+}
+
+
+
+/* IN GAME CONTAINER */
+
+#ennemies,#teamMates{
+    min-height: 75vh;
+    padding:2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* PROMPTER ACTIONS */
+
+#prompter-actions{
+    position: fixed;
+    bottom: 0;
+    font-size: 2rem;
+    height:25vh;
+    overflow:auto;
+    width: 100%;
+    background-color: #282828;
+    color:#FFF;
+}
+
+
+
+/* INGAME CARDS */
+
+#ennemies .card,#teamMates .card{
+    background-color: transparent;
+}
+
+#teamMates .card-front,#teamMates .card-back {
+    -webkit-box-shadow: 0px 2px 50px -8px rgba(255, 0, .5);
+    -moz-box-shadow: 0px 2px 50px -8px rgba(255, 0, 0,.5);
+    box-shadow: 0px 2px 50px -8px rgba(255, 0, 0,.5);
+}
+
+#ennemies .card:hover .card-front,.card:hover  #ennemies .card-back{
+    -webkit-box-shadow: 0px 2px 50px -8px rgba(0,204,31,.5);
+    -moz-box-shadow: 0px 2px 50px -8px rgba(0,204,31,.5);
+    box-shadow: 0px 2px 50px -8px rgba(0,204,31,.5);
+}
+
+#teamMates .card:hover .card-front,.card:hover #teamMates .card-back {
+    -webkit-box-shadow: 0px 2px 50px -8px rgba(255, 0, 1);
+    -moz-box-shadow: 0px 2px 50px -8px rgba(255, 0, 0,1);
+    box-shadow: 0px 2px 50px -8px rgba(255, 0, 0,1);
+}
+
+#ennemies .card-front,#ennemies .card-back{
+    -webkit-box-shadow: 0px 2px 50px -8px rgba(0,204,31,1);
+    -moz-box-shadow: 0px 2px 50px -8px rgba(0,204,31,1);
+    box-shadow: 0px 2px 50px -8px rgba(0,204,31,1);
+}
+
+#teamMates .card .card-body, #ennemies .card .card-body{
+    backface-visibility: visible;
+    perspective: 3000px;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform 1s ease-in-out;
+    min-height: 25rem;
+}
+
+#teamMates .card .card-body:hover, #ennemies .card .card-body:hover{
+    transform:rotateY(180deg);
+}
+
+
+.card-front,.card-back{
+    backface-visibility: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    border-radius: .5rem;
+}
+
+.card-front{
+    background-size:100% 100%;
+    background-position:top
+}
+
+
+.card-back{
+    background-color: #FFFF;
+    transform:rotateY(180deg);
+    background-image: url(../img/card_back_texture.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.card-characteristics{
+    position: absolute;
+    bottom:0;
+    background-color: rgba(255,255,255,0.66);
+    width:100%;
+    padding:2rem;
+}
+
+#teamMates .card .card-footer, #ennemies .card .card-footer{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FFF;
+}
+
+/* KILLED PLAYER DISPLAY */
+
+.card.loser{
+    height: 25rem;
+}
+
+.killed-character{
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.killed-character img{
+    height: 25rem;
+    width: 20rem;
+}
+
+.card{
+    height: 45rem;
+}
+
+.card,.killed-character{
+    width:100%;
+    max-width:20rem;
+    background-color: rgba(255,255,255,.8);
+}
